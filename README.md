@@ -40,9 +40,9 @@ my-project/
 ```
 
 When you `read src/components/Button.tsx`, the extension automatically loads:
-1. `src/components/AGENTS.md` (component-specific)
+1. `AGENTS.md` (project-wide — closest to root)
 2. `src/AGENTS.md` (src-specific)
-3. `AGENTS.md` (project-wide)
+3. `src/components/AGENTS.md` (component-specific — closest to file)
 
 ## Scope
 
