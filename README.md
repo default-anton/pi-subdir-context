@@ -39,10 +39,9 @@ my-project/
 │       └── Button.tsx
 ```
 
-When you `read src/components/Button.tsx`, the extension automatically loads:
-1. `AGENTS.md` (project-wide — closest to root)
-2. `src/AGENTS.md` (src-specific)
-3. `src/components/AGENTS.md` (component-specific — closest to file)
+When you `read src/components/Button.tsx`, the extension automatically loads subdirectory context (the root `AGENTS.md` is already loaded by pi):
+1. `src/AGENTS.md` (src-specific)
+2. `src/components/AGENTS.md` (component-specific — closest to file)
 
 ## Scope
 
