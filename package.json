@@ -10,7 +10,7 @@
     "context"
   ],
   "license": "MIT",
-  "author": "",
+  "author": "Anton Kuzmenko <hotk@hey.com>",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/default-anton/pi-subdir-context.git"
