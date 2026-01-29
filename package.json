@@ -19,6 +19,7 @@
   "types": "./dist/index.d.ts",
   "files": [
     "dist",
+    "src/",
     "README.md",
     "LICENSE"
   ],
@@ -30,7 +31,7 @@
   },
   "pi": {
     "extensions": [
-      "./dist/index.js"
+      "./src/index.ts"
     ]
   },
   "peerDependencies": {
