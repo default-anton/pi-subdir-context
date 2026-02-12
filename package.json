@@ -1,6 +1,6 @@
 {
   "name": "pi-subdir-context",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Automatically load AGENTS.md context from subdirectories in pi coding agent",
   "type": "module",
   "keywords": [
@@ -27,7 +27,10 @@
     "build": "tsc",
     "clean": "rm -rf dist",
     "check": "tsc --noEmit",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "release:verify-tag": "node scripts/verify-release-tag.mjs",
+    "release:notes": "node scripts/changelog-release-notes.mjs",
+    "release:gate": "npm run check && npm run build"
   },
   "pi": {
     "extensions": [
