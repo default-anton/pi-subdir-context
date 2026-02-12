@@ -1,6 +1,6 @@
 {
   "name": "pi-subdir-context",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Automatically load AGENTS.md context from subdirectories in pi coding agent",
   "type": "module",
   "keywords": [
