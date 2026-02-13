@@ -1,6 +1,6 @@
 {
   "name": "pi-subdir-context",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Automatically load AGENTS.md context from subdirectories in pi coding agent",
   "type": "module",
   "keywords": [
@@ -38,10 +38,10 @@
     ]
   },
   "peerDependencies": {
-    "@mariozechner/pi-coding-agent": "*"
+    "@mariozechner/pi-coding-agent": "^0.52.12"
   },
   "devDependencies": {
-    "@mariozechner/pi-coding-agent": "*",
+    "@mariozechner/pi-coding-agent": "^0.52.12",
     "@types/node": "^25.0.10",
     "typescript": "^5.0.0"
   }
