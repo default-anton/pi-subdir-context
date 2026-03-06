@@ -23,6 +23,20 @@ All notable changes to `pi-subdir-context` are documented here.
 
 - None.
 
+## [1.1.0] - 2026-03-05
+
+### Added
+
+- None.
+
+### Changed
+
+- AGENTS file discovery now treats `AGENTS.override.md` as `AGENTS.md` with higher precedence when both exist in the same directory.
+
+### Fixed
+
+- None.
+
 ## [1.0.5] - 2026-02-17
 
 ### Added

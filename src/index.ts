@@ -6,6 +6,8 @@ import type { ExtensionAPI, ExtensionContext } from "@mariozechner/pi-coding-age
 
 type TextContent = { type: "text"; text: string };
 
+const AGENTS_FILENAMES = ["AGENTS.override.md", "AGENTS.md"];
+
 export default function autoloadSubdirContext(pi: ExtensionAPI) {
 	const loadedAgents = new Set<string>();
 	let currentCwd = "";
@@ -29,12 +31,25 @@ export default function autoloadSubdirContext(pi: ExtensionAPI) {
 		return relative === "" || (!relative.startsWith("..") && !path.isAbsolute(relative));
 	}
 
+	function getAgentsFileFromDir(dir: string) {
+		for (const filename of AGENTS_FILENAMES) {
+			const candidate = path.join(dir, filename);
+			if (fs.existsSync(candidate)) {
+				return candidate;
+			}
+		}
+
+		return "";
+	}
+
 	function resetSession(cwd: string) {
 		currentCwd = resolvePath(cwd, process.cwd());
-		cwdAgentsPath = path.join(currentCwd, "AGENTS.md");
+		cwdAgentsPath = getAgentsFileFromDir(currentCwd);
 		homeDir = resolvePath(os.homedir(), process.cwd());
 		loadedAgents.clear();
-		loadedAgents.add(cwdAgentsPath);
+		if (cwdAgentsPath) {
+			loadedAgents.add(path.normalize(cwdAgentsPath));
+		}
 	}
 
 	function findAgentsFiles(filePath: string, rootDir: string) {
@@ -44,8 +59,8 @@ export default function autoloadSubdirContext(pi: ExtensionAPI) {
 		let dir = path.dirname(filePath);
 
 		while (isInsideRoot(rootDir, dir)) {
-			const candidate = path.join(dir, "AGENTS.md");
-			if (candidate !== cwdAgentsPath && fs.existsSync(candidate)) {
+			const candidate = getAgentsFileFromDir(dir);
+			if (candidate && candidate !== cwdAgentsPath) {
 				agentsFiles.push(candidate);
 			}
 
@@ -83,7 +98,7 @@ export default function autoloadSubdirContext(pi: ExtensionAPI) {
 				: "";
 		if (!searchRoot) return undefined;
 
-		if (path.basename(absolutePath) === "AGENTS.md") {
+		if (AGENTS_FILENAMES.includes(path.basename(absolutePath))) {
 			loadedAgents.add(path.normalize(absolutePath));
 			return undefined;
 		}
@@ -92,11 +107,12 @@ export default function autoloadSubdirContext(pi: ExtensionAPI) {
 		const additions: TextContent[] = [];
 
 		for (const agentsPath of agentFiles) {
-			if (loadedAgents.has(agentsPath)) continue;
+			const normalizedAgentsPath = path.normalize(agentsPath);
+			if (loadedAgents.has(normalizedAgentsPath)) continue;
 
 			try {
 				const content = await fs.promises.readFile(agentsPath, "utf-8");
-				loadedAgents.add(agentsPath);
+				loadedAgents.add(normalizedAgentsPath);
 				additions.push({
 					type: "text",
 					text: `Loaded subdirectory context from ${agentsPath}\n\n${content}`,
