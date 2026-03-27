@@ -23,6 +23,20 @@ All notable changes to `pi-subdir-context` are documented here.
 
 - None.
 
+## [1.1.1] - 2026-03-27
+
+### Added
+
+- None.
+
+### Changed
+
+- Updated `@mariozechner/pi-coding-agent` in peer and dev dependencies to `^0.63.1`.
+
+### Fixed
+
+- None.
+
 ## [1.1.0] - 2026-03-05
 
 ### Added
