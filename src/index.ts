@@ -79,7 +79,6 @@ export default function autoloadSubdirContext(pi: ExtensionAPI) {
 	};
 
 	pi.on("session_start", handleSessionChange);
-	pi.on("session_switch", handleSessionChange);
 
 	pi.on("tool_result", async (event, ctx) => {
 		if (event.toolName !== "read" || event.isError) return undefined;
