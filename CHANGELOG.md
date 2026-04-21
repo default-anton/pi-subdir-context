@@ -23,6 +23,20 @@ All notable changes to `pi-subdir-context` are documented here.
 
 - None.
 
+## [1.1.4] - 2026-04-21
+
+### Added
+
+- None.
+
+### Changed
+
+- Upgraded the GitHub Actions release workflow to `actions/checkout@v6` and `actions/setup-node@v6`.
+
+### Fixed
+
+- None.
+
 ## [1.1.3] - 2026-04-21
 
 ### Added
