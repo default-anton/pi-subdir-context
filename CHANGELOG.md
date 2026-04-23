@@ -23,6 +23,20 @@ All notable changes to `pi-subdir-context` are documented here.
 
 - None.
 
+## [1.1.5] - 2026-04-22
+
+### Added
+
+- None.
+
+### Changed
+
+- Updated `@mariozechner/pi-coding-agent` in peer and dev dependencies to `^0.69.0` for pi 0.69.0 compatibility. No source changes were needed because this extension does not use TypeBox or session-replacement APIs.
+
+### Fixed
+
+- None.
+
 ## [1.1.4] - 2026-04-21
 
 ### Added
