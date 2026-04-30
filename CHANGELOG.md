@@ -13,6 +13,20 @@ All notable changes to `pi-subdir-context` are documented here.
 
 ### Added
 
+- None.
+
+### Changed
+
+- None.
+
+### Fixed
+
+- None.
+
+## [1.1.6] - 2026-04-30
+
+### Added
+
 - Added support for loading `CLAUDE.md` as the lowest-priority subdirectory context fallback after `AGENTS.override.md` and `AGENTS.md`.
 
 ### Changed
