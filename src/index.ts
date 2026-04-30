@@ -6,7 +6,7 @@ import type { ExtensionAPI, ExtensionContext } from "@mariozechner/pi-coding-age
 
 type TextContent = { type: "text"; text: string };
 
-const AGENTS_FILENAMES = ["AGENTS.override.md", "AGENTS.md"];
+const AGENTS_FILENAMES = ["AGENTS.override.md", "AGENTS.md", "CLAUDE.md"];
 
 export default function autoloadSubdirContext(pi: ExtensionAPI) {
 	const loadedAgents = new Set<string>();
