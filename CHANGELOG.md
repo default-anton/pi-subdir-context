@@ -23,6 +23,20 @@ All notable changes to `pi-subdir-context` are documented here.
 
 - None.
 
+## [1.1.7] - 2026-05-07
+
+### Added
+
+- None.
+
+### Changed
+
+- Switched the pi coding-agent import and dependencies to the `@earendil-works` scope at `^0.74.0`.
+
+### Fixed
+
+- None.
+
 ## [1.1.6] - 2026-04-30
 
 ### Added
